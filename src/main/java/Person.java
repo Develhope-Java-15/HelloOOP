@@ -3,12 +3,15 @@ import java.time.LocalDate;
 public class Person {
     private String firstName;
     private String lastName;
+    private String fullName;
     private LocalDate dateOfBirth;
 
     public Person(String firstName, String lastName, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
+
+        this.fullName = this.firstName + " " + this.lastName;
     }
 
     public Person(String firstName, String lastName) {
@@ -24,7 +27,7 @@ public class Person {
     }
 
     public String getFullName() {
-        return firstName + " " + lastName;
+        return fullName;
     }
 
     public LocalDate getDateOfBirth() {
