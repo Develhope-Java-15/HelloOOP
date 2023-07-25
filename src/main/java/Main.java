@@ -1,13 +1,32 @@
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Collection;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-        Person baby = new Person("Mario", "Rossi");
-        Person elder = new Person("Gioacchino", "Rossi", LocalDate.of(1940, 10, 10));
+        // Student student = new Student("Marco", "Developpi", LocalDate.of(1994, 06, 23));
+        Person[] people = {
+                new Student("Marco", "Developpi", LocalDate.of(1994, 06, 23)),
+                new Person("Giulio", "Qualunque", LocalDate.of(1993, 06, 23)),
+                new Person("Marco", "Rossi"),
+        };
 
-        System.out.println(baby.getFullName());
-        System.out.println(elder.getFullName());
+        Person[] newborns = {
+                new Person("Licio", "Rossi"),
+                new Person("Marta", "Rossi"),
+                new Person("Gesualda", "Rossi"),
+        };
+
+
+        printFullNames(people);
+        printFullNames(newborns);
+    }
+
+    public static void printFullNames(Person[] peopleArray) {
+        for(Person person : peopleArray) {
+            System.out.println(person.getFullName());
+        }
     }
 }
